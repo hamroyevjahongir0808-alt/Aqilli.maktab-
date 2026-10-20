@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123b70">
+  <title>Aqlli Maktab — ta'lim platformasi</title>
+  <style>
+    :root {
+      --navy:#123b70;--blue:#246bce;--sky:#eaf2ff;--bg:#f4f7fc;--ink:#192943;--muted:#718096;--line:#e5eaf2;--white:#fff;--green:#13865c;--orange:#b96513;--red:#c23d4b;--shadow:0 8px 24px #1d355710;
+    }
+    body.dark {
+      --bg:#0f172a; --ink:#e5eefb; --muted:#a6b0c1; --line:#24314a; --white:#172235; --sky:#142640; --navy:#9ac0ff; --blue:#6ea8ff; --red:#ff95a0;
+      background:var(--bg); color:var(--ink);
+    }
+    *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif} body{min-height:100vh; transition:background .2s ease,color .2s ease} button,input,select,textarea{font:inherit} button{cursor:pointer} .app{min-height:100vh}.topbar{height:68px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 22px;gap:12px;position:sticky;top:0;z-index:10;box-shadow:0 4px 14px #0d254422}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}.logo{width:38px;height:38px;border-radius:12px;background:#fff;color:var(--navy);display:grid;place-items:center;font-size:21px}.top-actions{display:flex;gap:8px;align-items:center}.iconbtn{border:1px solid #ffffff45;background:#ffffff12;color:white;border-radius:11px;padding:9px 11px}.layout{display:grid;grid-template-columns:235px minmax(0,1fr);max-width:1500px;margin:auto;min-height:calc(100vh - 68px)}.sidebar{background:#fff;border-right:1px solid var(--line);padding:18px 12px}.body.dark .sidebar,.body.dark .panel,.body.dark .stat,.body.dark .feature,.body.dark .quick,.body.dark .hero,.body.dark .mobile-nav,.body.dark .role-select{background:#172235;border-color:var(--line);color:var(--ink)}
+    .school-label{font-size:11px;color:var(--muted);font-weight:800;letter-spacing:1px;padding:8px 12px 12px}.navbtn{width:100%;display:flex;gap:12px;align-items:center;text-align:left;padding:11px 12px;border:0;background:transparent;color:#40516b;border-radius:11px;margin:2px 0;font-weight:600}.body.dark .navbtn{color:#dfe9ff}.navbtn:hover,.navbtn.active{background:var(--sky);color:var(--blue)}.navbtn .ico{width:22px;text-align:center;font-size:18px}.side-bottom{margin-top:24px;border-top:1px solid var(--line);padding-top:16px}.content{padding:25px;min-width:0}.welcome{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}.welcome h1{margin:0 0 7px;font-size:27px}.muted{color:var(--muted)}.small{font-size:12px}.role-select{padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--ink);max-width:100%}.grid{display:grid;gap:16px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}.stat,.panel,.hero{background:white;border:1px solid var(--line);border-radius:17px;padding:18px;box-shadow:var(--shadow);min-width:0}.stat-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px;gap:6px}.stat-icon{background:var(--sky);border-radius:11px;padding:9px;font-size:19px}.stat strong{display:block;font-size:27px;margin:12px 0 5px}.positive{color:var(--green);font-size:12px}.main-grid{grid-template-columns:minmax(0,1.5fr) minmax(270px,1fr)}.panel{margin-bottom:16px}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.panel h2,.panel-head h2{font-size:17px;margin:0}.linkbtn{border:0;background:transparent;color:var(--blue);font-weight:700;padding:6px}.hero{background:linear-gradient(120deg,#123b70,#246bce);color:white;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:15px;overflow:hidden}.hero h2{font-size:22px;margin:0 0 8px}.hero p{color:#dceaff;line-height:1.5;margin:0}.hero .hero-icon{font-size:62px;opacity:.9}.btn{border:0;border-radius:10px;padding:10px 14px;background:var(--blue);color:white;font-weight:700}.btn.light{background:white;color:var(--navy)}.btn.ghost{background:var(--sky);color:var(--blue)}.btn.danger{background:#fff0f1;color:var(--red)}.btn:active{transform:scale(.98)}.row{display:flex;align-items:center;gap:10px}.between{justify-content:space-between}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:480px}th,td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.5px}.pill{display:inline-block;padding:5px 8px;border-radius:20px;background:#e9f8f1;color:var(--green);font-size:11px;font-weight:800}.pill.warn{background:#fff4e5;color:var(--orange)}.pill.blue{background:var(--sky);color:var(--blue)}.task{display:flex;gap:10px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}.task:last-child{border:0}.task input{margin-top:4px;accent-color:var(--blue)}.task.done .task-title{text-decoration:line-through;color:var(--muted)}.task-title{font-weight:700;font-size:13px}.task-sub{font-size:12px;color:var(--muted);margin-top:5px}.schedule-item{display:grid;grid-template-columns:65px 5px 1fr;gap:11px;align-items:center;padding:11px 0}.schedule-time{font-size:12px;color:var(--muted)}.schedule-line{height:43px;background:#80aef5;border-radius:5px}.schedule-item:nth-child(3n) .schedule-line{background:#6bc5a0}.schedule-item:nth-child(3n+1) .schedule-line{background:#e7b15e}.schedule-name{font-weight:700;font-size:13px}.schedule-room{font-size:12px;color:var(--muted);margin-top:4px}.quick-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.quick{background:white;border:1px solid var(--line);border-radius:14px;padding:15px 10px;text-align:center;color:var(--ink)}.quick span{font-size:24px;display:block;margin-bottom:8px}.quick b{font-size:12px}.page{display:none}.page.active{display:block}.feature-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature{background:#fff;border:1px solid var(--line);border-radius:15px;padding:17px}.feature .big{font-size:27px}.feature h3{font-size:15px;margin:10px 0 7px}.feature p{font-size:12px;color:var(--muted);line-height:1.5}.field{width:100%;padding:12px;border:1px solid #d9e1ed;border-radius:10px;background:white;margin:5px 0 12px;color:var(--ink)}label{font-size:12px;font-weight:700;color:#475569}.empty{padding:24px;text-align:center;color:var(--muted)}.chatbox{background:#f5f8ff;border:1px solid var(--line);border-radius:14px;padding:14px;min-height:190px;max-height:340px;overflow:auto;margin-bottom:12px}.bubble{padding:10px 12px;border-radius:12px;background:white;margin:7px 0;max-width:90%;font-size:13px;line-height:1.5}.bubble.me{background:var(--blue);color:white;margin-left:auto}.chatform{display:flex;gap:8px}.chatform input{flex:1;min-width:0}.notice{padding:12px;border-radius:11px;background:#fff7e9;color:#8c520b;font-size:12px;line-height:1.5;margin-top:12px}.footer{text-align:center;padding:20px;color:var(--muted);font-size:12px}.mobile-nav{display:none}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#142d50;color:white;padding:12px 18px;border-radius:12px;z-index:99;box-shadow:var(--shadow);font-size:13px;max-width:90vw}.hide{display:none!important}
+    @media(max-width:900px){.layout{grid-template-columns:190px minmax(0,1fr)}.content{padding:18px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.main-grid{grid-template-columns:1fr}.feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quick-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+    @media(max-width:620px){.topbar{height:60px;padding:0 13px}.brand{font-size:17px}.logo{width:33px;height:33px}.top-actions .iconbtn{padding:8px}.layout{display:block;padding-bottom:68px}.sidebar{display:none}.content{padding:15px}.welcome{align-items:flex-start;flex-direction:column}.welcome h1{font-size:23px}.role-select{width:100%}.hero{padding:16px}.hero h2{font-size:19px}.hero .hero-icon{font-size:42px}.stat{padding:13px}.stat strong{font-size:23px}.quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.feature-grid{grid-template-columns:1fr}.mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid var(--line);z-index:20;justify-content:space-around;padding:7px 4px calc(7px + env(safe-area-inset-bottom))}.mobile-nav button{background:transparent;border:0;color:#52627b;font-size:10px;padding:4px;display:flex;flex-direction:column;gap:4px;align-items:center}.mobile-nav button span{font-size:20px}.mobile-nav button.active{color:var(--blue);font-weight:800}.panel{padding:15px}.chatform{flex-direction:column}.chatform .btn{width:100%}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand"><div class="logo">🎓</div><span>Aqlli Maktab</span></div>
+    <div class="top-actions">
+      <button class="iconbtn" onclick="showPage('notifications')" aria-label="Xabarnomalar">🔔 <span id="noticeCount">3</span></button>
+      <button class="iconbtn" onclick="toggleTheme()" aria-label="Ko‘rinish">🌙</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="school-label">ASOSIY MENYU</div>
+      <nav id="sideNav">
+        <button class="navbtn active" data-page="dashboard" onclick="showPage('dashboard')"><span class="ico">🏠</span>Bosh sahifa</button>
+        <button class="navbtn" data-page="diary" onclick="showPage('diary')"><span class="ico">📔</span>Elektron kundalik</button>
+        <button class="navbtn" data-page="schedule" onclick="showPage('schedule')"><span class="ico">🗓️</span>Dars jadvali</button>
+        <button class="navbtn" data-page="grades" onclick="showPage('grades')"><span class="ico">📊</span>Baholar</button>
+        <button class="navbtn" data-page="attendance" onclick="showPage('attendance')"><span class="ico">✅</span>Davomat</button>
+        <button class="navbtn" data-page="homework" onclick="showPage('homework')"><span class="ico">✍️</span>Uy vazifalari</button>
+        <button class="navbtn" data-page="tests" onclick="showPage('tests')"><span class="ico">🧠</span>Test markazi</button>
+        <button class="navbtn" data-page="subjects" onclick="showPage('subjects')"><span class="ico">📚</span>Fanlar</button>
+        <button class="navbtn" data-page="ai" onclick="showPage('ai')"><span class="ico">✨</span>AI yordamchi</button>
+        <button class="navbtn" data-page="library" onclick="showPage('library')"><span class="ico">📖</span>Kutubxona</button>
+        <button class="navbtn" data-page="chess" onclick="showPage('chess')"><span class="ico">♟️</span>Shaxmat</button>
+        <button class="navbtn" data-page="messages" onclick="showPage('messages')"><span class="ico">💬</span>Xabarlar</button>
+        <button class="navbtn" data-page="calendar" onclick="showPage('calendar')"><span class="ico">📅</span>Tadbirlar</button>
+        <button class="navbtn" data-page="profile" onclick="showPage('profile')"><span class="ico">👤</span>Mening profilim</button>
+        <button class="navbtn" data-page="admin" onclick="showPage('admin')"><span class="ico">🏫</span>Maktab boshqaruvi</button>
+      </nav>
+      <div class="side-bottom"><button class="navbtn" onclick="showToast('Yordam bo‘limi keyingi yangilanishda ulanadi.')"><span class="ico">❓</span>Yordam markazi</button></div>
+    </aside>
+
+    <main class="content">
+      <div class="welcome">
+        <div>
+          <h1 id="pageTitle">Xush kelibsiz! 👋</h1>
+          <div class="muted" id="pageSub">Bugungi o‘qish rejangiz va muhim yangiliklar.</div>
+        </div>
+        <select class="role-select" id="roleSelect" onchange="changeRole(this.value)">
+          <option value="student">🎒 O‘quvchi rejimi</option>
+          <option value="teacher">📚 O‘qituvchi rejimi</option>
+          <option value="parent">👨‍👩‍👧 Ota-ona rejimi</option>
+          <option value="admin">🏫 Direktor rejimi</option>
+        </select>
+      </div>
+
+      <section class="page active" id="page-dashboard">
+        <div class="hero"><div><h2>Bilim sari har kuni bir qadam!</h2><p>Rejangizni kuzating, vazifalarni bajaring va yangi bilimlarni kashf eting.</p><button class="btn light" style="margin-top:14px" onclick="showPage('homework')">Vazifalarni ko‘rish →</button></div><div class="hero-icon">🚀</div></div>
+        <div class="grid stats">
+          <div class="stat"><div class="stat-top">O‘rtacha baho <span class="stat-icon">⭐</span></div><strong id="statGrade">4.6 / 5</strong><span class="positive">↑ O‘quv ko‘rsatkichi</span></div>
+          <div class="stat"><div class="stat-top">Davomat <span class="stat-icon">✅</span></div><strong id="statAttend">95%</strong><span class="positive">Yaxshi qatnashuv</span></div>
+          <div class="stat"><div class="stat-top">Vazifalar <span class="stat-icon">📝</span></div><strong id="statTasks">4 ta</strong><span class="muted small">Bajarilishi kerak</span></div>
+          <div class="stat"><div class="stat-top">Test natijalari <span class="stat-icon">🎯</span></div><strong>82%</strong><span class="positive">Mashq qilishda davom eting</span></div>
+        </div>
+        <div class="grid main-grid">
+          <div>
+            <div class="panel"><div class="panel-head"><h2>🗓️ Bugungi darslar</h2><button class="linkbtn" onclick="showPage('schedule')">To‘liq jadval →</button></div><div id="todaySchedule"><div class="schedule-item"><div class="schedule-time">08:30</div><div class="schedule-line"></div><div><div class="schedule-name">Matematika</div><div class="schedule-room">12-xona · 45 daqiqa</div></div></div><div class="schedule-item"><div class="schedule-time">09:25</div><div class="schedule-line"></div><div><div class="schedule-name">Ona tili</div><div class="schedule-room">12-xona · 45 daqiqa</div></div></div><div class="schedule-item"><div class="schedule-time">10:20</div><div class="schedule-line"></div><div><div class="schedule-name">Ingliz tili</div><div class="schedule-room">18-xona · 45 daqiqa</div></div></div></div></div>
+            <div class="panel"><div class="panel-head"><h2>✍️ Vazifalar ro‘yxati</h2><button class="linkbtn" onclick="showPage('homework')">Hammasi →</button></div><div id="dashboardTasks"></div></div>
+          </div>
+          <div>
+            <div class="panel"><div class="panel-head"><h2>⚡ Tezkor bo‘limlar</h2></div><div class="grid quick-grid"><button class="quick" onclick="showPage('grades')"><span>📊</span><b>Baholar</b></button><button class="quick" onclick="showPage('tests')"><span>🧠</span><b>Testlar</b></button><button class="quick" onclick="showPage('ai')"><span>✨</span><b>AI yordamchi</b></button><button class="quick" onclick="showPage('library')"><span>📚</span><b>Kutubxona</b></button></div></div>
+            <div class="panel"><div class="panel-head"><h2>📣 Maktab yangiliklari</h2><button class="linkbtn" onclick="showPage('notifications')">Barchasi</button></div><div class="task"><div>🏆</div><div><div class="task-title">Bilimlar bellashuvi</div><div class="task-sub">Juma kuni · Ro‘yxatdan o‘tish ochiq</div></div></div><div class="task"><div>📌</div><div><div class="task-title">Haftalik reja</div><div class="task-sub">Vazifalarni vaqtida topshiring</div></div></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="page-diary"><div class="panel"><div class="panel-head"><h2>📔 Elektron kundalik</h2><span class="pill blue">Namuna ma’lumot</span></div><p class="muted">Darslar, topshiriqlar va o‘quv natijalarini bir joyda kuzating.</p><div class="table-wrap"><table><thead><tr><th>Sana</th><th>Fan</th><th>Mavzu</th><th>Uy vazifasi</th><th>Holat</th></tr></thead><tbody><tr><td>20-oktabr</td><td>Matematika</td><td>Kasrlar</td><td>32-mashq</td><td><span class="pill warn">Jarayonda</span></td></tr><tr><td>20-oktabr</td><td>Ona tili</td><td>Gap bo‘laklari</td><td>Qoidani yozish</td><td><span class="pill">Berilgan</span></td></tr><tr><td>21-oktabr</td><td>Ingliz tili</td><td>Daily routine</td><td>10 ta so‘z</td><td><span class="pill blue">Yangi</span></td></tr></tbody></table></div></div></section>
+      <section class="page" id="page-schedule"><div class="panel"><div class="panel-head"><h2>🗓️ Haftalik dars jadvali</h2><button class="btn ghost" onclick="showToast('Jadval namuna sifatida berilgan.')">ℹ️ Izoh</button></div><div class="table-wrap"><table><thead><tr><th>Vaqt</th><th>Dushanba</th><th>Seshanba</th><th>Chorshanba</th><th>Payshanba</th><th>Juma</th></tr></thead><tbody><tr><td>08:30</td><td>Matematika</td><td>Ona tili</td><td>Tarix</td><td>Matematika</td><td>Biologiya</td></tr><tr><td>09:25</td><td>Ona tili</td><td>Ingliz tili</td><td>Matematika</td><td>Fizika</td><td>Informatika</td></tr><tr><td>10:20</td><td>Ingliz tili</td><td>Tarix</td><td>Kimyo</td><td>Ona tili</td><td>Jismoniy tarbiya</td></tr><tr><td>11:15</td><td>Informatika</td><td>Biologiya</td><td>Ingliz tili</td><td>Tarix</td><td>Matematika</td></tr></tbody></table></div></div></section>
+      <section class="page" id="page-grades"><div class="panel"><div class="panel-head"><h2>📊 Fanlar bo‘yicha baholar</h2><span class="pill blue">Demo</span></div><div class="table-wrap"><table><thead><tr><th>Fan</th><th>1-hafta</th><th>2-hafta</th><th>3-hafta</th><th>O‘rtacha</th></tr></thead><tbody><tr><td>Matematika</td><td>5</td><td>4</td><td>5</td><td><span class="pill">4.7</span></td></tr><tr><td>Ona tili</td><td>4</td><td>5</td><td>5</td><td><span class="pill">4.7</span></td></tr><tr><td>Ingliz tili</td><td>4</td><td>4</td><td>5</td><td><span class="pill blue">4.3</span></td></tr><tr><td>Tarix</td><td>5</td><td>5</td><td>4</td><td><span class="pill">4.7</span></td></tr><tr><td>Informatika</td><td>5</td><td>5</td><td>5</td><td><span class="pill">5.0</span></td></tr></tbody></table></div><div class="notice">Bu baholar faqat namuna. Haqiqiy baholarni faqat ruxsat berilgan o‘qituvchi yoki maktab administratori kiritishi kerak.</div></div></section>
+      <section class="page" id="page-attendance"><div class="grid stats"><div class="stat"><div class="stat-top">Davomat</div><strong>95%</strong><span class="positive">Yaxshi</span></div><div class="stat"><div class="stat-top">Kelgan kunlar</div><strong>38</strong><span class="muted small">Namuna</span></div><div class="stat"><div class="stat-top">Sababli qoldirish</div><strong>1</strong><span class="muted small">Kun</span></div><div class="stat"><div class="stat-top">Sababsiz</div><strong>1</strong><span class="muted small">Kun</span></div></div><div class="panel"><h2>✅ Davomat tarixi</h2><div class="table-wrap"><table><thead><tr><th>Sana</th><th>Holat</th><th>Izoh</th></tr></thead><tbody><tr><td>20-oktabr</td><td><span class="pill">Kelgan</span></td><td>—</td></tr><tr><td>19-oktabr</td><td><span class="pill">Kelgan</span></td><td>—</td></tr><tr><td>18-oktabr</td><td><span class="pill warn">Sababli</span></td><td>Namuna</td></tr></tbody></table></div></div></section>
+      <section class="page" id="page-homework"><div class="panel"><div class="panel-head"><h2>✍️ Uy vazifalari</h2><button class="btn" onclick="addTask()">+ Vazifa qo‘shish</button></div><p class="muted small">Vazifalarni belgilash ushbu qurilmada saqlanadi.</p><div id="allTasks"></div><div class="notice">Vazifalar ro‘yxati hozircha shu telefon brauzerida saqlanadi; o‘qituvchiga avtomatik yuborilmaydi.</div></div></section>
+      <section class="page" id="page-tests"><div class="panel"><div class="panel-head"><h2>🧠 Test markazi</h2><span class="pill blue">Mashq rejimi</span></div><p class="muted">Fan tanlang va bilimlaringizni sinab ko‘ring.</p><div class="grid feature-grid"><div class="feature"><div class="big">➗</div><h3>Matematika</h3><p>Sonlar, kasrlar va mantiq.</p><button class="btn" onclick="startQuiz('math')">Testni boshlash</button></div><div class="feature"><div class="big">🇬🇧</div><h3>Ingliz tili</h3><p>So‘zlar va grammatika.</p><button class="btn" onclick="startQuiz('english')">Testni boshlash</button></div><div class="feature"><div class="big">🌍</div><h3>Umumiy bilim</h3><p>Turli fanlardan savollar.</p><button class="btn" onclick="startQuiz('general')">Testni boshlash</button></div></div><div id="quizArea"></div></div></section>
+      <section class="page" id="page-subjects"><div class="grid feature-grid"><div class="feature"><div class="big">➗</div><h3>Matematika</h3><p>Misollar, formulalar, mantiqiy masalalar.</p><button class="btn ghost" onclick="showToast('Matematika darslari keyingi bosqichda to‘ldiriladi.')">O‘rganish</button></div><div class="feature"><div class="big">📖</div><h3>Ona tili va adabiyot</h3><p>Grammatika, imlo va adabiy asarlar.</p><button class="btn ghost" onclick="showToast('Ona tili materiallari keyingi bosqichda qo‘shiladi.')">O‘rganish</button></div><div class="feature"><div class="big">🇬🇧</div><h3>Ingliz tili</h3><p>Lug‘at, tinglash va grammatika.</p><button class="btn ghost" onclick="showToast('Ingliz tili materiallari keyingi bosqichda qo‘shiladi.')">O‘rganish</button></div><div class="feature"><div class="big">💻</div><h3>Informatika</h3><p>Kompyuter savodxonligi va dasturlash.</p><button class="btn ghost" onclick="showToast('Informatika kursi keyingi bosqichda qo‘shiladi.')">O‘rganish</button></div><div class="feature"><div class="big">🧬</div><h3>Biologiya</h3><p>Tabiat, tirik organizmlar va ekologiya.</p><button class="btn ghost" onclick="showToast('Biologiya materiallari keyingi bosqichda qo‘shiladi.')">O‘rganish</button></div><div class="feature"><div class="big">🌏</div><h3>Tarix va geografiya</h3><p>Dunyo, xaritalar va tarixiy voqealar.</p><button class="btn ghost" onclick="showToast('Tarix va geografiya materiallari keyingi bosqichda qo‘shiladi.')">O‘rganish</button></div></div></section>
+      <section class="page" id="page-ai"><div class="panel"><div class="panel-head"><h2>✨ Aqlli AI yordamchi</h2><span class="pill warn">Demo rejim</span></div><p class="muted">Savolingizni yozing. Hozir javoblar namunaviy; haqiqiy sun’iy intellekt server orqali ulanadi.</p><div class="chatbox" id="chatbox"><div class="bubble">Salom! Men Aqlli Maktab yordamchisining demo ko‘rinishiman. Matematika, til yoki dars rejalari haqida so‘rashingiz mumkin.</div></div><form class="chatform" onsubmit="sendChat(event)"><input class="field" id="chatInput" placeholder="Masalan: 2x + 4 = 10 ni tushuntir..." required><button class="btn">Yuborish ➤</button></form><div class="notice">API kalitini HTML kod ichiga yozmang. Haqiqiy AI ulash uchun kalit serverda xavfsiz saqlanishi lozim.</div></div></section>
+      <section class="page" id="page-library"><div class="panel"><div class="panel-head"><h2>📖 Raqamli kutubxona</h2><input class="field" style="max-width:230px;margin:0" id="bookSearch" placeholder="Kitob qidirish..." oninput="filterBooks()"></div><div id="booksList"></div><div class="notice">Bu bo‘limdagi nomlar namuna. Keyinchalik qonuniy ochiq darsliklar va ruxsatli materiallar havolalari qo‘shiladi.</div></div></section>
+      <section class="page" id="page-chess"><div class="panel"><div class="panel-head"><h2>♟️ Shaxmat klubi</h2><span class="pill warn">Boshlang‘ich</span></div><p>Shaxmat o‘ynash, taktika o‘rganish va do‘stlar bilan bellashish uchun maxsus bo‘lim.</p><div class="grid feature-grid"><div class="feature"><div class="big">♟️</div><h3>Shaxmat taxtasi</h3><p>Interaktiv taxta keyingi bosqichda qo‘shiladi.</p><button class="btn" onclick="showToast('To‘liq shaxmat o‘yini uchun alohida o‘yin mexanizmi qo‘shamiz.')">Tayyorlash</button></div><div class="feature"><div class="big">🧩</div><h3>Masalalar</h3><p>Yurishlar va strategiyani mashq qiling.</p><button class="btn ghost" onclick="showToast('Shaxmat masalalari keyingi bosqichda qo‘shiladi.')">Mashq qilish</button></div><div class="feature"><div class="big">🏆</div><h3>Turnirlar</h3><p>Maktab turnirlari va reyting.</p><button class="btn ghost" onclick="showToast('Onlayn turnirlar uchun server kerak bo‘ladi.')">Turnirlar</button></div></div></div></section>
+      <section class="page" id="page-messages"><div class="panel"><h2>💬 Xabarlar</h2><p class="muted">O‘qituvchi, ota-ona va maktab ma’muriyati bilan muloqot bo‘limi.</p><div class="task"><div>👩‍🏫</div><div><div class="task-title">Sinf rahbari</div><div class="task-sub">Haqiqiy xabar almashish keyingi bosqichda ulanadi.</div></div><span class="pill blue">Demo</span></div><button class="btn" onclick="showToast('Xabar yuborish uchun akkauntlar va server kerak.')">+ Xabar yozish</button></div></section>
+      <section class="page" id="page-calendar"><div class="panel"><h2>📅 Maktab tadbirlari</h2><div class="task"><div>🏆</div><div><div class="task-title">Fan olimpiadasi</div><div class="task-sub">25-oktabr · Ro‘yxatdan o‘tish</div></div></div><div class="task"><div>🎭</div><div><div class="task-title">Ijodiy haftalik</div><div class="task-sub">30-oktabr · Maktab faollar zali</div></div></div><div class="task"><div>⚽</div><div><div class="task-title">Sport musobaqasi</div><div class="task-sub">2-noyabr · Sport maydoni</div></div></div><button class="btn ghost" onclick="showToast('Tadbir qo‘shish huquqi admin panelida bo‘ladi.')">+ Tadbir qo‘shish</button></div></section>
+      <section class="page" id="page-notifications"><div class="panel"><h2>🔔 Xabarnomalar</h2><div class="task"><div>📚</div><div><div class="task-title">Yangi uy vazifasi</div><div class="task-sub">Matematika — 32-mashq</div></div><span class="pill blue">Yangi</span></div><div class="task"><div>📅</div><div><div class="task-title">Tadbir eslatmasi</div><div class="task-sub">Fan olimpiadasi yaqinlashmoqda.</div></div></div><div class="task"><div>🏫</div><div><div class="task-title">Maktab e’loni</div><div class="task-sub">Haftalik reja yangilandi.</div></div></div><button class="btn ghost" onclick="document.getElementById('noticeCount').textContent='0';showToast('Demo xabarnomalar o‘qildi.')">Barchasini o‘qilgan qilish</button></div></section>
+      <section class="page" id="page-profile"><div class="panel"><h2>👤 Mening profilim</h2><p class="muted">Bu demo profil. Hozircha ma’lumotlar serverga yuborilmaydi.</p><form onsubmit="saveProfile(event)"><label>Ism va familiya</label><input class="field" id="profileName" value="O‘quvchi Demo" required><label>Sinf</label><select class="field" id="profileClass"><option>5-sinf</option><option selected>7-sinf</option><option>8-sinf</option><option>9-sinf</option><option>10-sinf</option><option>11-sinf</option></select><label>Maktab nomi</label><input class="field" id="profileSchool" value="Mening maktabim"><button class="btn">Profilni saqlash</button></form><div class="notice">Haqiqiy akkaunt ochish va ma’lumotlarni himoyalash uchun serverda ro‘yxatdan o‘tish tizimi yaratiladi.</div></div></section>
+      <section class="page" id="page-admin"><div class="panel"><div class="panel-head"><h2>🏫 Maktab boshqaruvi</h2><span class="pill warn">Demo panel</span></div><div class="grid stats"><div class="stat"><div class="stat-top">O‘quvchilar</div><strong>642</strong><span class="muted small">Namuna raqam</span></div><div class="stat"><div class="stat-top">O‘qituvchilar</div><strong>38</strong><span class="muted small">Namuna raqam</span></div><div class="stat"><div class="stat-top">Sinflar</div><strong>22</strong><span class="muted small">Namuna raqam</span></div><div class="stat"><div class="stat-top">Davomat</div><strong>94%</strong><span class="muted small">Namuna raqam</span></div></div><h3>Administrator vazifalari</h3><div class="grid feature-grid"><div class="feature"><div class="big">👥</div><h3>Foydalanuvchilar</h3><p>O‘quvchi va o‘qituvchi akkauntlarini boshqarish.</p><button class="btn ghost" onclick="showToast('Bu amal faqat haqiqiy admin tizimi ulanganda ishlaydi.')">Boshqarish</button></div><div class="feature"><div class="big">🏫</div><h3>Sinflar</h3><p>Sinf va fanlarni biriktirish.</p><button class="btn ghost" onclick="showToast('Sinflar bazasi keyingi bosqichda ulanadi.')">Sinflar</button></div><div class="feature"><div class="big">📈</div><h3>Hisobotlar</h3><p>Davomat va o‘zlashtirish bo‘yicha tahlil.</p><button class="btn ghost" onclick="showToast('Haqiqiy ma’lumotlar bazasi kerak.')">Hisobot</button></div></div><div class="notice">Direktor bo‘limi hozir faqat namuna. Rollarni tanlash haqiqiy administrator huquqini bermaydi. Serverda ruxsatlar tekshirilishi shart.</div></div></section>
+
+      <div class="footer">© 2026 Aqlli Maktab · Ta’lim uchun yaratilgan prototip</div>
+    </main>
+  </div>
+
+  <nav class="mobile-nav">
+    <button class="active" data-page="dashboard" onclick="showPage('dashboard')"><span>🏠</span>Bosh sahifa</button>
+    <button data-page="schedule" onclick="showPage('schedule')"><span>🗓️</span>Jadval</button>
+    <button data-page="homework" onclick="showPage('homework')"><span>✍️</span>Vazifalar</button>
+    <button data-page="ai" onclick="showPage('ai')"><span>✨</span>AI</button>
+    <button data-page="profile" onclick="showPage('profile')"><span>👤</span>Profil</button>
+  </nav>
+</div>
+
+<script>
+  const pageNames={dashboard:['Xush kelibsiz! 👋','Bugungi o‘qish rejangiz va muhim yangiliklar.'],diary:['Elektron kundalik','Darslar va topshiriqlar bir joyda.'],schedule:['Dars jadvali','Haftalik mashg‘ulotlaringiz.'],grades:['Baholar','Fanlar bo‘yicha o‘quv natijalari.'],attendance:['Davomat','Darslarda qatnashish ko‘rsatkichi.'],homework:['Uy vazifalari','Vazifalarni rejalashtiring va bajaring.'],tests:['Test markazi','Bilimingizni mashq orqali sinang.'],subjects:['Fanlar','Fanlarni tanlang va o‘rganing.'],ai:['AI yordamchi ✨','Savol bering va o‘rganishga yordam oling.'],library:['Raqamli kutubxona','O‘quv materiallarini qidiring.'],chess:['Shaxmat klubi ♟️','Mantiq va strategiyani mashq qiling.'],messages:['Xabarlar','Maktab jamoasi bilan muloqot.'],calendar:['Tadbirlar','Maktabdagi muhim sanalar.'],notifications:['Xabarnomalar','Muhim yangiliklar va eslatmalar.'],profile:['Mening profilim','Shaxsiy ma’lumotlar namunasi.'],admin:['Maktab boshqaruvi','Maktab statistikasi va boshqaruv vositalari.']};
+
+  function safeStorageGet(key, fallback) {
+    try {
+      const raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch (e) {
+      return fallback;
+    }
+  }
+
+  function safeStorageSet(key, value) {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function showPage(id){
+    document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+id));
+    document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));
+    const d=pageNames[id]||['Aqlli Maktab',''];
+    document.getElementById('pageTitle').textContent=d[0];
+    document.getElementById('pageSub').textContent=d[1];
+    if(id==='homework') renderTasks();
+    if(id==='library') renderBooks();
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  function changeRole(role){
+    const names={student:'O‘quvchi',teacher:'O‘qituvchi',parent:'Ota-ona',admin:'Direktor'};
+    showToast(names[role]+' rejimi tanlandi. Bu faqat interfeys ko‘rinishi; haqiqiy ruxsat emas.');
+    if(role==='teacher'||role==='parent'||role==='admin') showPage(role==='admin'?'admin':role==='teacher'?'diary':'grades');
+    else showPage('dashboard');
+  }
+
+  function showToast(msg){
+    let t=document.getElementById('toast');
+    if(!t){
+      t=document.createElement('div');
+      t.id='toast';
+      t.className='toast';
+      document.body.appendChild(t);
+    }
+    t.textContent=msg;
+    t.classList.remove('hide');
+    clearTimeout(window.toastTimer);
+    window.toastTimer=setTimeout(()=>t.classList.add('hide'),3000);
+  }
+
+  let tasks = safeStorageGet('aqlli_tasks', [{id:1,title:'Matematika — 32-mashq',sub:'Bugun · Matematika',done:false},{id:2,title:'Ingliz tilidan 10 ta so‘z',sub:'Ertaga · Ingliz tili',done:false},{id:3,title:'Ona tili qoidasini takrorlash',sub:'Ertaga · Ona tili',done:true},{id:4,title:'Tarix mavzusini o‘qish',sub:'Payshanba · Tarix',done:false}]);
+
+  function saveTasks(){
+    safeStorageSet('aqlli_tasks', tasks);
+    renderTasks();
+    updateTaskCount();
+  }
+
+  function taskHtml(t){
+    return `<div class="task ${t.done?'done':''}"><input type="checkbox" ${t.done?'checked':''} onchange="toggleTask(${t.id})" aria-label="Vazifani bajarildi deb belgilash"><div style="flex:1"><div class="task-title">${escapeHtml(t.title)}</div><div class="task-sub">${escapeHtml(t.sub)}</div></div><button class="btn danger" style="padding:6px 9px" onclick="deleteTask(${t.id})">×</button></div>`;
+  }
+
+  function renderTasks(){
+    let html = tasks.map(taskHtml).join('') || '<div class="empty">Vazifa yo‘q. “Vazifa qo‘shish” tugmasini bosing.</div>';
+    let a=document.getElementById('allTasks'), b=document.getElementById('dashboardTasks');
+    if(a) a.innerHTML=html;
+    if(b) b.innerHTML = tasks.filter(t=>!t.done).slice(0,3).map(taskHtml).join('') || '<div class="empty">Barcha vazifalar bajarildi! 🎉</div>';
+  }
+
+  function toggleTask(id){ tasks = tasks.map(t => t.id===id ? {...t, done:!t.done} : t); saveTasks(); }
+  function deleteTask(id){ tasks = tasks.filter(t => t.id !== id); saveTasks(); }
+
+  function addTask(){
+    let title=prompt('Vazifa nomini kiriting:');
+    if(!title||!title.trim()) return;
+    let sub=prompt('Fan yoki muddat (ixtiyoriy):','Yangi vazifa')||'Yangi vazifa';
+    tasks.unshift({id:Date.now(),title:title.trim(),sub,done:false});
+    saveTasks();
+    showToast('Vazifa qo‘shildi.');
+  }
+
+  function updateTaskCount(){
+    const n = tasks.filter(t=>!t.done).length;
+    const el=document.getElementById('statTasks');
+    if(el) el.textContent = n + ' ta';
+  }
+
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  const quizzes={math:[{q:'7 × 8 nechaga teng?',opts:['54','56','64'],a:1,why:'7 × 8 = 56.'},{q:'15 + 27 = ?',opts:['32','42','43'],a:1,why:'15 + 27 = 42.'},{q:'100 ning yarmi nechaga teng?',opts:['25','40','50'],a:2,why:'100 ÷ 2 = 50.'}],english:[{q:'“Apple” so‘zining tarjimasi?',opts:['Olma','Kitob','Maktab'],a:0,why:'Apple — olma.'},{q:'“Good morning” nima degani?',opts:['Xayrli tun','Xayrli tong','Rahmat'],a:1,why:'Good morning — xayrli tong.'},{q:'“I ___ a student.”',opts:['am','are','is'],a:0,why:'I bilan am ishlatiladi.'}],general:[{q:'O‘zbekiston poytaxti qaysi shahar?',opts:['Samarqand','Buxoro','Toshkent'],a:2,why:'O‘zbekiston poytaxti — Toshkent.'},{q:'Bir haftada necha kun bor?',opts:['5','7','10'],a:1,why:'Bir haftada 7 kun bor.'},{q:'Yerning tabiiy yo‘ldoshi nima?',opts:['Oy','Quyosh','Mars'],a:0,why:'Yerning tabiiy yo‘ldoshi — Oy.'}]};
+
+  function startQuiz(type){
+    const qs = quizzes[type];
+    const area = document.getElementById('quizArea');
+    area.innerHTML = '<div class="panel" style="margin-top:18px"><h2>Test</h2>' + qs.map((q,i) => `<div style="padding:13px 0;border-bottom:1px solid var(--line)"><b>${i+1}. ${q.q}</b>${q.opts.map((o,j) => `<label style="display:block;padding:8px;font-weight:500"><input type="radio" name="q${i}" value="${j}"> ${o}</label>`).join('')}<div class="small muted" id="why${i}"></div></div>`).join('') + '<button class="btn" style="margin-top:15px" onclick="checkQuiz(\'' + type + '\')">Natijani tekshirish</button><div id="quizResult"></div></div>';
+    area.scrollIntoView({behavior:'smooth'});
+  }
+
+  function checkQuiz(type){
+    const qs=quizzes[type], score=qs.reduce((sum,q,i)=>{ const chosen=document.querySelector('input[name="q'+i+'"]:checked'); let isCorrect = !!chosen && Number(chosen.value) === q.a; let why = document.getElementById('why'+i); if(why) why.textContent = q.why + ' ' + (isCorrect ? '✅ To‘g‘ri' : 'ℹ️ To‘g‘ri javob: ' + q.opts[q.a]); return sum + (isCorrect ? 1 : 0); }, 0);
+    document.getElementById('quizResult').innerHTML = `<div class="hero" style="margin-top:14px"><div><h2>Natija: ${score}/${qs.length}</h2><p>${Math.round(score/qs.length*100)}% to‘g‘ri javob</p></div><div class="hero-icon">${score===qs.length?'🏆':'🎯'}</div></div>`;
+  }
+
+  const GEMINI_PROXY_URL = window.GEMINI_PROXY_URL || '/api/chat';
+
+  async function requestGemini(question) {
+    if (!window.GEMINI_PROXY_URL && !document.body.dataset.allowMock) {
+      return 'AI xizmati hozirgi variantda server orqali ulanmagan. Xavfsiz backend yoki serverless endpoint kerak. API kaliti frontendga yozilmaydi.';
+    }
+    const response = await fetch(GEMINI_PROXY_URL, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ question })
+    });
+    if (!response.ok) {
+      throw new Error('Server xato');
+    }
+    const data = await response.json();
+    return data.answer || 'Javob olishda muammo yuz berdi.';
+  }
+
+  async function sendChat(e){
+    e.preventDefault();
+    const input=document.getElementById('chatInput');
+    const q=input.value.trim();
+    if(!q) return;
+    const box=document.getElementById('chatbox');
+    box.innerHTML += `<div class="bubble me">${escapeHtml(q)}</div>`;
+    const fallback = 'Bu demo yordamchi hozir internetdagi AI modeliga ulanmagan. Savolni bo‘laklarga ajrating, darslikdagi mavzuni tekshiring va o‘qituvchingizdan aniqlashtiring. Keyingi bosqichda xavfsiz server orqali haqiqiy AI ulaymiz.';
+    let answer = fallback;
+    if (/2\s*\+\s*2/.test(q)) answer = '2 + 2 = 4. Avval birliklarni qo‘shamiz: ikkita narsaga yana ikkita narsa qo‘shilsa, jami to‘rtta bo‘ladi.';
+    else if (/salom/i.test(q)) answer = 'Salom! Qaysi fan yoki mavzuda yordam kerak?';
+    else if (/matematika/i.test(q)) answer = 'Matematikani yechishda masalani yozing, berilganlarni ajrating va amalni bosqichma-bosqich bajaring. Haqiqiy AI ulanganida batafsil tushuntirish bera olamiz.';
+
+    try {
+      if (window.GEMINI_PROXY_URL) {
+        answer = await requestGemini(q);
+      }
+    } catch (err) {
+      answer = fallback;
+    }
+
+    box.innerHTML += `<div class="bubble">${escapeHtml(answer)}</div>`;
+    input.value='';
+    box.scrollTop=box.scrollHeight;
+  }
+
+  const books=[['📘','Matematika','Misollar, formulalar va mashqlar'],['📗','Ona tili','Grammatika va imlo'],['📙','Ingliz tili','Lug‘at va grammatika'],['📕','O‘zbekiston tarixi','Tarixiy mavzular'],['📓','Informatika','Kompyuter va dasturlash asoslari'],['📒','Biologiya','Tabiat va tirik organizmlar']];
+  function renderBooks(){ filterBooks(); }
+  function filterBooks(){
+    const q=(document.getElementById('bookSearch')?.value||'').toLowerCase();
+    const list=books.filter(b=>b[1].toLowerCase().includes(q)||b[2].toLowerCase().includes(q));
+    document.getElementById('booksList').innerHTML=list.map(b=>`<div class="task"><div style="font-size:25px">${b[0]}</div><div style="flex:1"><div class="task-title">${b[1]}</div><div class="task-sub">${b[2]}</div></div><button class="btn ghost" onclick="showToast('Bu material hali yuklanmagan; keyin ochiq darslik havolasi qo‘shiladi.')">Ochish</button></div>`).join('') || '<div class="empty">Mos kitob topilmadi.</div>';
+  }
+
+  function saveProfile(e){
+    e.preventDefault();
+    safeStorageSet('aqlli_profile', {name:document.getElementById('profileName').value,cls:document.getElementById('profileClass').value,school:document.getElementById('profileSchool').value});
+    showToast('Profil ushbu qurilmada saqlandi.');
+  }
+
+  function toggleTheme(){
+    document.body.classList.toggle('dark');
+    const dark = document.body.classList.contains('dark');
+    const btn = document.querySelector('.iconbtn[aria-label="Ko‘rinish"]');
+    if (btn) btn.textContent = dark ? '☀️' : '🌙';
+    showToast(dark ? 'Qorong‘i ko‘rinish yoqildi.' : 'Oddiy ko‘rinish yoqildi.');
+  }
+
+  renderTasks();
+  updateTaskCount();
+  try {
+    const p = safeStorageGet('aqlli_profile', null);
+    if(p){
+      document.getElementById('profileName').value = p.name || 'O‘quvchi Demo';
+      document.getElementById('profileClass').value = p.cls || '7-sinf';
+      document.getElementById('profileSchool').value = p.school || 'Mening maktabim';
+    }
+  } catch (e) {}
+</script>
+</body>
+</html>
